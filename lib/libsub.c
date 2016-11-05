@@ -2118,7 +2118,7 @@ int sub_bb_i2c_write( sub_handle hndl, int channel, int sa,
 */
 int sub_ir_config( sub_handle hndl, int carrier, int duty, int mode, ... )
 {
-	int		rc;
+	int		rc = SE_PARAM;
 	sub_pack	outpk,inpk;
     int		icr;
 	int		ocr;
@@ -2131,16 +2131,16 @@ int sub_ir_config( sub_handle hndl, int carrier, int duty, int mode, ... )
 
 	/* Carrier */
 	if( (carrier <=0) || (carrier >= SUB_F_CPU/4) )
-		return SE_PARAM;
+		goto exit;
     icr = SUB_F_CPU/carrier-1;
 	if( icr > 0xFFFF )
-		return SE_PARAM;
+		goto exit;
 	outpk.tag.ir_config_req.ICRL = icr & 0xFF;
 	outpk.tag.ir_config_req.ICRH = icr >>8;
 
 	/* Duty */
 	if( (duty<0) || (duty>100) )
-		return SE_PARAM;
+		goto exit;
 	ocr = (icr*duty)/100;
 	outpk.tag.ir_config_req.OCRL = ocr & 0xFF;
 	outpk.tag.ir_config_req.OCRH = ocr >>8;
@@ -2158,13 +2158,13 @@ int sub_ir_config( sub_handle hndl, int carrier, int duty, int mode, ... )
 													va_arg( args, int );
 		break;
 	default:
-		va_end( args );
-		return SE_PARAM;
+		goto exit;
 	}
 
 	inpk.tag.size = sizeof(struct ir_config_req_st);
 	rc = sub_transaction( hndl, &outpk, &inpk, 10000 );
-	
+
+exit:
 	va_end( args );
 	return rc;
 }
