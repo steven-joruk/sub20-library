@@ -1,0 +1,81 @@
+0.2.3
+-----
+- rst 
+
+0.2.2
+-----
+- EEP Read/Write
+
+0.2.1
+-----
+- Extended SPI status printout
+- Low Spee SPI support
+
+0.2.0
+-----
+- High Speed I2C
+
+0.1.9
+-----
+- Edge operations
+
+0.1.7
+-----
+- E<ess> SPI SS Config option
+
+0.1.6
+-----
+- GPIOB 
+- mdio_ex
+
+0.1.5
+-----
+- BB I2C
+
+0.1.3
+-----
+- ... option is --spi
+- Buffeer size increased to 1M
+
+0.1.2
+-----
+- MDIO
+
+0.1.1
+-----
+- SPI SDIO
+
+0.1.0
+-----
+- PWM
+
+0.0.8
+-----
+- I2C Slave
+- --i2c_cfg
+
+0.0.7
+-----
+- ADC
+
+0.0.6
+-----
+- Fast PWM
+
+0.0.5
+-----
+- FIFO Config
+- Hex Dump SPI
+
+0.0.4
+-----
+- FIFO
+
+0.0.3
+-----
+- --LCD
+
+0.0.2
+-----
+- --getvpd
+
