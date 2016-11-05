@@ -1808,7 +1808,7 @@ int sub_adc_read( sub_handle hndl, int* data, int* mux, int reads )
 				  (inpk.tag.adc_read_resp.adc_lh[i*2+1]<<8);
 			/* Convert differential result */
 			if( (mux[i]>ADC_S7) && (mux[i]<=ADC_D52) && (data[i]&0x200) )
-				data[i] = data[i]|((-1)<<10);
+				data[i] = data[i]|((-1u)<<10);
 		}
 	}
 	return rc;
