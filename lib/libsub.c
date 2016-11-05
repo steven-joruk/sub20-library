@@ -2146,7 +2146,6 @@ int sub_ir_config( sub_handle hndl, int carrier, int duty, int mode, ... )
 	outpk.tag.ir_config_req.OCRH = ocr >>8;
 
     outpk.tag.ir_config_req.mode = mode;
-	va_start( args, mode );
 	switch( mode )
 	{
 	case IR_UART_MODE:
