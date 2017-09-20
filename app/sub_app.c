@@ -84,14 +84,14 @@ int main( int argc, char* argv[] )
     for( i=0; i<8; i++ )
         config.pwm_duty[i] = -1;
 
-	config.serno=-1;	/* by default open first available device */
+    config.serno=-1;	/* by default open first available device */
     config.bb_i2c_ch=-1;
     config.bb_i2c_mode=BB_I2C_STD;
 
-    /* Parse command line */
-    rc=parse_argv( argc, argv, OPTIONS_N );
-    if( rc )
-        return rc;
+	/* Parse command line */
+	rc=parse_argv( argc, argv, OPTIONS_N );
+	if( rc )
+		return rc;
 
 	dev = NULL;
 	if( config.serno != -1 )

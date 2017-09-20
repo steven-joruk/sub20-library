@@ -1101,9 +1101,9 @@ int sub_spi_config( sub_handle hndl, int cfg_set, int* cfg_get )
 	sub_pack	outpk,inpk;
 	int			version;
 
-    rc = sub_dev_cache_get_feature( hndl, SUB_FEATURE_VERSION, &version );
-    if( rc )
-        return rc;
+	rc = sub_dev_cache_get_feature( hndl, SUB_FEATURE_VERSION, &version );
+	if( rc )
+		return rc;
 
 	if( version >= 33 )
 	{
